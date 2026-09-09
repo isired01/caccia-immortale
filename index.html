@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caccia all'Immortale</title>
+<meta name="description" content="Tre rotte candidate per trovare l'immortale: le Ande, i monti taoisti della Cina, l'arcipelago indonesiano. Date, budget e un candidato reale per ciascuna.">
+<meta name="theme-color" content="#E6EAE3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caccia all'Immortale">
+<meta property="og:description" content="Tre rotte candidate per trovare l'immortale: le Ande, i monti taoisti della Cina, l'arcipelago indonesiano. Date, budget e un candidato reale per ciascuna.">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129517;</text></svg>">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --carta:#E6EAE3;
+  --carta-alt:#DDE2D9;
+  --scheda:#F1F3ED;
+  --inchiostro:#16211C;
+  --inchiostro-soft:#4A574F;
+  --linea:#BFC7BC;
+  --giada:#2E6A56;
+  --cinabro:#B33A24;
+  --ottone:#8A6C24;
+  --f-display:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  --f-corpo:"Newsreader",Georgia,serif;
+  --f-dati:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --carta:#0F1512;
+    --carta-alt:#141B17;
+    --scheda:#171F1A;
+    --inchiostro:#DBE2D8;
+    --inchiostro-soft:#94A199;
+    --linea:#2C3730;
+    --giada:#6FB29A;
+    --cinabro:#E1674A;
+    --ottone:#C9A24A;
+  }
+}
+:root[data-theme="dark"]{
+  --carta:#0F1512;
+  --carta-alt:#141B17;
+  --scheda:#171F1A;
+  --inchiostro:#DBE2D8;
+  --inchiostro-soft:#94A199;
+  --linea:#2C3730;
+  --giada:#6FB29A;
+  --cinabro:#E1674A;
+  --ottone:#C9A24A;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--carta);
+  color:var(--inchiostro);
+  font-family:var(--f-corpo);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--linea)}
+#topo{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.hero-in{position:relative;display:flex;flex-direction:column;gap:22px;padding:88px 0 76px}
+.eyebrow{
+  font-family:var(--f-dati);font-size:11.5px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ottone);
+  display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:0;
+}
+.eyebrow span{display:inline-flex;gap:8px;align-items:center}
+.eyebrow span::before{content:"";width:16px;height:1px;background:currentColor;opacity:.6}
+.eyebrow span:first-child::before{display:none}
+h1{
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:clamp(2.9rem,8.4vw,6.1rem);
+  line-height:.92;
+  letter-spacing:-.02em;
+  margin:0;
+  text-wrap:balance;
+}
+h1 em{font-style:italic;font-weight:400;color:var(--cinabro)}
+.lede{max-width:60ch;font-size:1.22rem;line-height:1.55;font-weight:300;margin:0}
+.lede b{font-weight:600}
+.premessa{
+  max-width:56ch;margin:0;padding-left:18px;
+  border-left:2px solid var(--giada);
+  font-family:var(--f-dati);font-size:13px;line-height:1.7;
+  color:var(--inchiostro-soft);
+}
+
+/* ---------- criteri ---------- */
+.criteri{border-bottom:1px solid var(--linea);background:var(--carta-alt)}
+.criteri-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;padding:34px 0}
+.criterio h3{
+  font-family:var(--f-dati);font-size:11.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--giada);margin:0 0 6px;
+}
+.criterio p{margin:0;font-size:15px;line-height:1.5;color:var(--inchiostro-soft)}
+
+/* ---------- schede ---------- */
+.schede{display:flex;flex-direction:column;gap:0}
+.scheda{
+  border-bottom:1px solid var(--linea);
+  padding:46px 0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:44px;
+  align-items:start;
+  transition:background .35s ease;
+}
+.scheda[data-scelta="si"]{background:var(--scheda)}
+.sigla{
+  font-family:var(--f-dati);font-size:11.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ottone);
+  display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 14px;
+}
+.sigla .coord{color:var(--inchiostro-soft);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.scheda h2{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.02;letter-spacing:-.015em;
+  margin:0 0 4px;text-wrap:balance;
+}
+.sottotit{font-family:var(--f-corpo);font-style:italic;font-size:1.05rem;color:var(--inchiostro-soft);margin:0 0 22px}
+.scheda p.testo{max-width:58ch;margin:0 0 18px}
+
+.candidato{
+  border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);
+  padding:16px 0;margin:0 0 20px;max-width:58ch;
+  display:flex;flex-direction:column;gap:6px;
+}
+.candidato .et{
+  font-family:var(--f-dati);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cinabro);
+}
+.candidato .nome{font-family:var(--f-display);font-size:1.3rem;font-weight:700;line-height:1.15}
+.candidato .nota{font-size:15px;line-height:1.5;color:var(--inchiostro-soft);margin:0}
+
+.rotta{margin:0 0 22px}
+.rotta .et{
+  font-family:var(--f-dati);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--giada);display:block;margin-bottom:10px;
+}
+.rotta ol{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  font-family:var(--f-dati);font-size:12.5px;
+}
+.rotta li{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.rotta li:not(:last-child)::after{content:"";width:22px;height:1px;background:var(--linea)}
+.rotta li b{font-weight:500}
+
+/* colonna dati */
+.dati{
+  border:1px solid var(--linea);
+  background:var(--carta-alt);
+  padding:20px;
+  display:flex;flex-direction:column;gap:20px;
+  position:sticky;top:24px;
+  overflow-x:auto;
+}
+.dati table{width:100%;border-collapse:collapse;font-family:var(--f-dati);font-size:12.5px}
+.dati th{
+  text-align:left;font-weight:400;color:var(--inchiostro-soft);
+  letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;
+  padding:7px 0;vertical-align:top;white-space:nowrap;
+}
+.dati td{
+  text-align:right;font-weight:500;padding:7px 0;
+  font-variant-numeric:tabular-nums;vertical-align:top;
+}
+.dati tr:not(:last-child) th,.dati tr:not(:last-child) td{border-bottom:1px solid var(--linea)}
+.meter{display:flex;gap:3px;justify-content:flex-end;padding-top:3px}
+.meter i{width:9px;height:9px;border:1px solid var(--giada);border-radius:50%}
+.meter i.on{background:var(--giada)}
+
+button.scegli{
+  font-family:var(--f-dati);font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;
+  background:none;color:var(--inchiostro);
+  border:1px solid var(--inchiostro);
+  padding:13px 16px;cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+button.scegli:hover{background:var(--cinabro);border-color:var(--cinabro);color:#F6F2EC}
+button.scegli[aria-pressed="true"]{background:var(--giada);border-color:var(--giada);color:#F2F5EF}
+button.scegli:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
+
+/* ---------- verdetto ---------- */
+.verdetto{padding:52px 0 30px}
+.verdetto .et{
+  font-family:var(--f-dati);font-size:11.5px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ottone);display:block;margin-bottom:12px;
+}
+#esito{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.06;letter-spacing:-.015em;
+  margin:0 0 12px;text-wrap:balance;
+}
+#passo{margin:0;max-width:56ch;color:var(--inchiostro-soft);font-size:1.05rem}
+
+.regole{border-top:1px solid var(--linea);padding:30px 0 12px}
+.regole ol{
+  margin:0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;
+}
+.regole li{font-size:15px;line-height:1.5}
+.regole li .n{
+  font-family:var(--f-dati);font-size:11px;font-weight:600;letter-spacing:.14em;
+  color:var(--cinabro);display:block;margin-bottom:5px;
+}
+footer{
+  border-top:1px solid var(--linea);margin-top:26px;padding:22px 0 56px;
+  font-family:var(--f-dati);font-size:11.5px;line-height:1.8;color:var(--inchiostro-soft);
+}
+
+@media (max-width:820px){
+  .scheda{grid-template-columns:minmax(0,1fr);gap:26px}
+  .dati{position:static}
+  .hero-in{padding:64px 0 54px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+
+<header class="hero">
+  <canvas id="topo" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="eyebrow"><span>Dossier 001</span><span>Rilevamento aperto</span><span>3 rotte candidate</span></p>
+    <h1>Caccia<br>all'<em>immortale</em></h1>
+    <p class="lede">Tu sei convinta che ci sia. Io ho detto <b>andiamo a cercarlo</b> e tu hai fatto match, quindi ormai è un impegno preso.</p>
+    <p class="premessa">Ho ristretto il pianeta a tre zone dove qualcuno ha davvero sostenuto di aver superato il limite: le Ande, i monti taoisti della Cina, l'arcipelago indonesiano. Ogni scheda ha un candidato reale, una rotta percorribile e un preventivo. Ne scegli una e smette di essere una battuta.</p>
+  </div>
+</header>
+
+<section class="criteri">
+  <div class="wrap criteri-in">
+    <div class="criterio">
+      <h3>Densità di leggenda</h3>
+      <p>Quante persone, in quel raggio di chilometri, hanno dichiarato per iscritto di essere molto più vecchie del possibile.</p>
+    </div>
+    <div class="criterio">
+      <h3>Plausibilità logistica</h3>
+      <p>Ci si arriva con ferie normali e senza permessi speciali. Nessuna rotta chiede più di tre settimane.</p>
+    </div>
+    <div class="criterio">
+      <h3>Resa nel racconto</h3>
+      <p>Se torniamo a mani vuote, deve comunque essere la storia migliore che raccontiamo per i prossimi dieci anni.</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap schede">
+
+  <article class="scheda" id="s-ande">
+    <div>
+      <p class="sigla"><span>Rotta A &middot; Ande / Amazzonia</span><span class="coord">04&deg;15&prime;S 79&deg;13&prime;W</span></p>
+      <h2>La valle che ha mentito sull'età</h2>
+      <p class="sottotit">Ecuador, Perù &mdash; 21 giorni</p>
+      <p class="testo">Negli anni Settanta Vilcabamba finì su tutte le riviste come "la valle dei centenari": abitanti che dichiaravano 120, 130, 140 anni, acqua miracolosa, zero infarti. Poi i demografi andarono a controllare i registri parrocchiali e scoprirono che le età si gonfiavano ogni anno di più, perché essere il più vecchio della valle era diventato un mestiere. È la pista più smentita delle tre, ed è esattamente per questo che la metto per prima: se qualcuno vuole nascondersi, il posto perfetto è quello dove tutti mentono sull'età e nessuno ci crede più.</p>
+      <div class="candidato">
+        <span class="et">Chi cerchiamo</span>
+        <span class="nome">I registri di Vilcabamba</span>
+        <p class="nota">Poi si sale sull'altopiano dai paqos q'ero sopra Cusco, gli ultimi custodi della tradizione inca, e si chiude dai curanderos sul Río Napo, in Amazzonia, dove il tempo lo misurano diversamente.</p>
+      </div>
+      <div class="rotta">
+        <span class="et">Rotta</span>
+        <ol>
+          <li><b>Quito</b></li><li><b>Vilcabamba</b></li><li><b>Cusco</b></li><li><b>Valle Sacra</b></li><li><b>Amazzonia &middot; Napo</b></li>
+        </ol>
+      </div>
+    </div>
+    <aside class="dati">
+      <table>
+        <tr><th>Finestra</th><td>giu &ndash; set</td></tr>
+        <tr><th>Durata</th><td>21 giorni</td></tr>
+        <tr><th>Budget a testa</th><td>2.600 &ndash; 3.200 &euro;</td></tr>
+        <tr><th>Volo d'ingresso</th><td>MXP &rarr; UIO</td></tr>
+        <tr><th>Quota max</th><td>3.400 m</td></tr>
+        <tr><th>Fatica</th><td><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td></tr>
+      </table>
+      <button class="scegli" type="button" aria-pressed="false" data-nome="le Ande" data-passo="Si parte da Quito a giugno. Prenoto i voli quando mi dici sì, e ti avviso subito della quota alta: due giorni a Cusco senza fare niente prima di salire.">Scelgo questa</button>
+    </aside>
+  </article>
+
+  <article class="scheda" id="s-cina">
+    <div>
+      <p class="sigla"><span>Rotta B &middot; Cina centro-meridionale</span><span class="coord">24&deg;08&prime;N 107&deg;15&prime;E</span></p>
+      <h2>Duecentocinquantasei anni</h2>
+      <p class="sottotit">Sichuan, Hubei, Guangxi &mdash; 18 giorni</p>
+      <p class="testo">In Cina l'immortalità non è un aneddoto, è un programma di ricerca durato duemila anni: gli alchimisti taoisti cercavano di sintetizzarla dal cinabro, il minerale rosso del mercurio, e diversi imperatori si sono avvelenati provandoci. La leggenda più recente è quella di Li Ching-Yuen, erborista del Sichuan, morto nel 1933: i giornali dell'epoca gli attribuirono 256 anni. Andiamo a chiedere ai monaci sulle montagne dove diceva di aver imparato.</p>
+      <div class="candidato">
+        <span class="et">Chi cerchiamo</span>
+        <span class="nome">I monaci di Wudang Shan</span>
+        <p class="nota">Più a sud, nella contea di Bama in Guangxi, c'è una concentrazione di centenari certificata dal governo e ormai diventata industria turistica: pullman di gente che va a respirare l'aria delle grotte. Anche lì qualcuno campa di questa storia. Ottimo segno.</p>
+      </div>
+      <div class="rotta">
+        <span class="et">Rotta</span>
+        <ol>
+          <li><b>Chengdu</b></li><li><b>Qingcheng Shan</b></li><li><b>Wudang Shan</b></li><li><b>Bama</b></li><li><b>Yangshuo</b></li>
+        </ol>
+      </div>
+    </div>
+    <aside class="dati">
+      <table>
+        <tr><th>Finestra</th><td>apr &ndash; mag &middot; set &ndash; ott</td></tr>
+        <tr><th>Durata</th><td>18 giorni</td></tr>
+        <tr><th>Budget a testa</th><td>1.800 &ndash; 2.300 &euro;</td></tr>
+        <tr><th>Volo d'ingresso</th><td>MXP &rarr; CTU</td></tr>
+        <tr><th>Burocrazia</th><td>visto turistico</td></tr>
+        <tr><th>Fatica</th><td><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td></tr>
+      </table>
+      <button class="scegli" type="button" aria-pressed="false" data-nome="la Cina" data-passo="La più economica e la più organizzata: treni ad alta velocità fra tutte le tappe. Serve il visto, quindi decidiamo almeno due mesi prima. Aprile è più verde, ottobre più asciutto.">Scelgo questa</button>
+    </aside>
+  </article>
+
+  <article class="scheda" id="s-indo">
+    <div>
+      <p class="sigla"><span>Rotta C &middot; Giava, Sulawesi, Bali</span><span class="coord">02&deg;58&prime;S 119&deg;54&prime;E</span></p>
+      <h2>Dove la morte è una malattia</h2>
+      <p class="sottotit">Indonesia &mdash; 19 giorni</p>
+      <p class="testo">Nel 2017 è morto a Sragen, Giava centrale, un uomo che la carta d'identità indonesiana dava nato nel 1870: 146 anni, il che lo renderebbe la persona più vecchia mai registrata. Nessuno è riuscito a verificarlo, perché i documenti di quella generazione furono compilati a memoria. Ma è la seconda tappa quella che ti convince: a Tana Toraja, sulle montagne di Sulawesi, un morto resta in casa con la famiglia per mesi o anni e viene chiamato <em>to makula'</em>, "la persona malata", finché non ci sono i soldi per il funerale. Un intero popolo che si rifiuta di firmare il confine.</p>
+      <div class="candidato">
+        <span class="et">Chi cerchiamo</span>
+        <span class="nome">Le anagrafi di Giava</span>
+        <p class="nota">Si chiude a Bali dai <em>balian</em>, i guaritori tradizionali, che è anche l'unica tappa dove dopo tre settimane di ricerca infruttuosa possiamo dignitosamente crollare su una spiaggia.</p>
+      </div>
+      <div class="rotta">
+        <span class="et">Rotta</span>
+        <ol>
+          <li><b>Yogyakarta</b></li><li><b>Sragen</b></li><li><b>Makassar</b></li><li><b>Tana Toraja</b></li><li><b>Bali</b></li>
+        </ol>
+      </div>
+    </div>
+    <aside class="dati">
+      <table>
+        <tr><th>Finestra</th><td>mag &ndash; set</td></tr>
+        <tr><th>Durata</th><td>19 giorni</td></tr>
+        <tr><th>Budget a testa</th><td>1.900 &ndash; 2.400 &euro;</td></tr>
+        <tr><th>Volo d'ingresso</th><td>MXP &rarr; CGK</td></tr>
+        <tr><th>Voli interni</th><td>3</td></tr>
+        <tr><th>Fatica</th><td><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></td></tr>
+      </table>
+      <button class="scegli" type="button" aria-pressed="false" data-nome="l'Indonesia" data-passo="La tappa che conta è Tana Toraja: le cerimonie funebri grandi si concentrano in luglio e agosto, quindi la data la decide il calendario, non noi. Dieci ore di strada da Makassar, e ne vale ognuna.">Scelgo questa</button>
+    </aside>
+  </article>
+
+</main>
+
+<section class="wrap verdetto">
+  <span class="et">Verdetto</span>
+  <p id="esito">Tre rotte sul tavolo, nessuna ancora scelta.</p>
+  <p id="passo">Scegli quella che ti sembra più probabile. Sulle altre due torniamo dopo, tanto un immortale non ha fretta.</p>
+</section>
+
+<section class="wrap regole">
+  <ol>
+    <li><span class="n">Regola I</span>Chi lo trova per primo decide dove si mangia per il resto del viaggio.</li>
+    <li><span class="n">Regola II</span>Ogni candidato scartato va documentato: foto, nome, età dichiarata.</li>
+    <li><span class="n">Regola III</span>Se non lo troviamo, la spedizione non è fallita. È solo la prima.</li>
+  </ol>
+</section>
+
+<footer class="wrap">
+  Preventivi a spanne su volo, trasporti interni e alloggi medi. Le leggende citate sono documentate come dichiarazioni, non come fatti: Vilcabamba è stata smentita, i 256 anni di Li Ching-Yuen non sono mai stati verificati, i 146 di Giava nemmeno.<br>
+  Dossier compilato il 09.09.2026 &middot; in attesa di una firma.
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('topo');
+  var ctx=c.getContext('2d');
+  var ridotto=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var ANELLI=17;
+  var w=0,h=0,visibili=ridotto?ANELLI:0;
+
+  function linea(){
+    return getComputedStyle(document.body).getPropertyValue('--giada').trim()||'#2E6A56';
+  }
+  function misura(){
+    var r=c.getBoundingClientRect();
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    w=r.width;h=r.height;
+    c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function disegna(){
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle=linea();
+    ctx.lineWidth=1;
+    var cx=w*0.78,cy=h*0.44,base=Math.max(w,h)*0.055,passo=Math.max(w,h)*0.042;
+    for(var i=0;i<Math.min(visibili,ANELLI);i++){
+      var r=base+i*passo;
+      ctx.globalAlpha=0.16+0.5*(1-i/ANELLI);
+      ctx.beginPath();
+      for(var s=0;s<=200;s++){
+        var t=s/200*Math.PI*2;
+        var d=r*(1+0.075*Math.sin(3*t+i*0.42)+0.045*Math.sin(5*t-i*0.66)+0.03*Math.sin(7*t+i*0.21));
+        var x=cx+Math.cos(t)*d*1.35, y=cy+Math.sin(t)*d;
+        if(s){ctx.lineTo(x,y);}else{ctx.moveTo(x,y);}
+      }
+      ctx.closePath();ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+  }
+  function apri(){
+    visibili+=0.34;
+    disegna();
+    if(visibili<ANELLI){requestAnimationFrame(apri);}
+  }
+  misura();
+  window.addEventListener('resize',function(){misura();disegna();});
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(){disegna();});
+  if(ridotto){disegna();}else{requestAnimationFrame(apri);}
+
+  var esito=document.getElementById('esito');
+  var passo=document.getElementById('passo');
+  var bottoni=document.querySelectorAll('button.scegli');
+  Array.prototype.forEach.call(bottoni,function(b){
+    b.addEventListener('click',function(){
+      var attivo=b.getAttribute('aria-pressed')==='true';
+      Array.prototype.forEach.call(bottoni,function(o){
+        o.setAttribute('aria-pressed','false');
+        o.textContent='Scelgo questa';
+        o.closest('.scheda').dataset.scelta='no';
+      });
+      if(attivo){
+        esito.textContent='Tre rotte sul tavolo, nessuna ancora scelta.';
+        passo.textContent='Scegli quella che ti sembra più probabile. Sulle altre due torniamo dopo, tanto un immortale non ha fretta.';
+        return;
+      }
+      b.setAttribute('aria-pressed','true');
+      b.textContent='Rotta scelta';
+      b.closest('.scheda').dataset.scelta='si';
+      esito.textContent='Si va a cercarlo in '+b.dataset.nome+'.';
+      passo.textContent=b.dataset.passo;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
